@@ -20,7 +20,7 @@ class BasicAnimationsPage extends StatelessWidget {
             maxCrossAxisExtent: 360,
             mainAxisSpacing: 12,
             crossAxisSpacing: 12,
-            childAspectRatio: 1.2,
+            mainAxisExtent: 148,
           ),
           itemCount: items.length,
           itemBuilder: (context, index) {
@@ -36,13 +36,13 @@ class BasicAnimationsPage extends StatelessWidget {
                   );
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(14),
+                  padding: const EdgeInsets.all(12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 42,
-                        height: 42,
+                        width: 40,
+                        height: 40,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(14),
                           gradient: LinearGradient(
@@ -54,7 +54,7 @@ class BasicAnimationsPage extends StatelessWidget {
                         ),
                         child: Icon(item.icon, color: Colors.white),
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 10),
                       Text(
                         item.title,
                         maxLines: 1,
@@ -62,7 +62,7 @@ class BasicAnimationsPage extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleMedium
                             ?.copyWith(fontWeight: FontWeight.w700),
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 2),
                       Text(
                         item.subtitle,
                         maxLines: 1,
