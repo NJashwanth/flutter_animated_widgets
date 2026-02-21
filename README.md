@@ -1,17 +1,50 @@
-# flutter_animated_widgets
+# Flutter Animated Widgets
 
-A new Flutter project.
+Modern Flutter animation showcase with:
+- Premium splash and gallery UI
+- Basic animations section
+- Advanced animations section
+- Auto-looping animation examples
 
-## Getting Started
+## Demo Videos
 
-This project is a starting point for a Flutter application.
+Add your recorded videos in `docs/videos/` so anyone visiting the repository can preview the app quickly.
 
-A few resources to get you started if this is your first Flutter project:
+Naming convention used below:
+- `basic-*.mov` for source videos
+- `advanced-*.mov` for source videos
+- `docs/videos/gif/*.gif` for inline README previews
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+### Basic Animations
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Animation | Demo Video |
+|---|---|
+| Fade Animation | ![Fade](docs/videos/gif/basic-fade.gif)<br>[Watch video](docs/videos/basic-fade.mov) |
+| Scale Animation | ![Scale](docs/videos/gif/basic-scale.gif)<br>[Watch video](docs/videos/basic-scale.mov) |
+| Rotation Animation | ![Rotation](docs/videos/gif/basic-rotation.gif)<br>[Watch video](docs/videos/basic-rotation.mov) |
+| Slide Animation | ![Slide](docs/videos/gif/basic-slide.gif)<br>[Watch video](docs/videos/basic-slide.mov) |
+| Size Animation | ![Size](docs/videos/gif/basic-size.gif)<br>[Watch video](docs/videos/basic-size.mov) |
+| Color Animation | ![Color](docs/videos/gif/basic-color.gif)<br>[Watch video](docs/videos/basic-color.mov) |
+| Hero Animation | ![Hero](docs/videos/gif/basic-hero.gif)<br>[Watch video](docs/videos/basic-hero.mov) |
+| Staggered Animation | ![Staggered](docs/videos/gif/basic-staggered.gif)<br>[Watch video](docs/videos/basic-staggered.mov) |
+
+### Advanced Animations
+
+| Category | Demo Video |
+|---|---|
+| Depth Motion | ![Depth Motion](docs/videos/gif/advanced-depth-motion.gif)<br>[Watch video](docs/videos/advanced-depth-motion.mov) |
+| Signal Waves | ![Signal Waves](docs/videos/gif/advanced-signal-waves.gif)<br>[Watch video](docs/videos/advanced-signal-waves.mov) |
+| Morphing Forms | ![Morphing Forms](docs/videos/gif/advanced-morphing-forms.gif)<br>[Watch video](docs/videos/advanced-morphing-forms.mov) |
+| Particle Systems | ![Particle Systems](docs/videos/gif/advanced-particle-systems.gif)<br>[Watch video](docs/videos/advanced-particle-systems.mov) |
+
+## Run Locally
+
+```bash
+flutter pub get
+flutter run
+```
+
+## Tech
+
+- Flutter (Material 3)
+- Custom animations with `AnimationController`, `Tween`, and `CustomPainter`
