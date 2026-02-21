@@ -14,7 +14,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
 
     expect(find.text('Animation Gallery'), findsOneWidget);
-    expect(find.text('Fade Animation'), findsOneWidget);
-    expect(find.text('Scale Animation'), findsOneWidget);
+    expect(find.text('Basic Animation'), findsOneWidget);
+    expect(find.text('Advance Animations'), findsOneWidget);
   });
 }

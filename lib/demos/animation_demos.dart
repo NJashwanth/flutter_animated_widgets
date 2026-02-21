@@ -248,25 +248,12 @@ class ColorDemo extends StatefulWidget {
 class _ColorDemoState extends State<ColorDemo>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<Color?> _color;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: widget.duration)
       ..repeat(reverse: true);
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final first = widget.firstColor ?? Theme.of(context).colorScheme.primary;
-    final second =
-        widget.secondColor ?? Theme.of(context).colorScheme.secondary;
-    _color = ColorTween(
-      begin: first,
-      end: second,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -277,15 +264,23 @@ class _ColorDemoState extends State<ColorDemo>
 
   @override
   Widget build(BuildContext context) {
+    final first = widget.firstColor ?? Theme.of(context).colorScheme.primary;
+    final second =
+        widget.secondColor ?? Theme.of(context).colorScheme.secondary;
+    final colorAnimation = ColorTween(
+      begin: first,
+      end: second,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+
     return DemoContainer(
       child: AnimatedBuilder(
-        animation: _color,
+        animation: colorAnimation,
         builder: (context, _) {
           return Container(
             width: 120,
             height: 120,
             decoration: BoxDecoration(
-              color: _color.value,
+              color: colorAnimation.value,
               borderRadius: BorderRadius.circular(18),
             ),
           );

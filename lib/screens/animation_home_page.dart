@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../data/animation_items.dart';
 import '../widgets/aurora_background.dart';
-import 'animation_examples_page.dart';
+import 'advanced_animations_page.dart';
+import 'basic_animations_page.dart';
 
 class AnimationHomePage extends StatelessWidget {
   const AnimationHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final items = animationItems();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Animation Gallery'),
@@ -22,68 +20,104 @@ class AnimationHomePage extends StatelessWidget {
         ],
       ),
       body: AuroraBackground(
-        child: ListView.builder(
-          padding: const EdgeInsets.fromLTRB(12, 12, 12, 20),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Card(
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(20),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => AnimationExamplesPage(item: item),
-                      ),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(14),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 52,
-                          height: 52,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            gradient: LinearGradient(
-                              colors: [
-                                Theme.of(context).colorScheme.primary,
-                                Theme.of(context).colorScheme.tertiary,
-                              ],
-                            ),
-                          ),
-                          child: Icon(item.icon, color: Colors.white),
-                        ),
-                        const SizedBox(width: 14),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                item.title,
-                                style: Theme.of(context).textTheme.titleMedium
-                                    ?.copyWith(fontWeight: FontWeight.w700),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(item.subtitle),
-                            ],
-                          ),
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          size: 16,
-                          color: Colors.white.withValues(alpha: 0.8),
-                        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(14, 18, 14, 22),
+          child: Column(
+            children: [
+              _HomeCategoryCard(
+                title: 'Basic Animation',
+                subtitle: 'All currently implemented animations',
+                icon: Icons.auto_awesome_motion,
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const BasicAnimationsPage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 14),
+              _HomeCategoryCard(
+                title: 'Advance Animations',
+                subtitle: 'Premium motion section for next phase',
+                icon: Icons.bolt,
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const AdvancedAnimationsPage(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _HomeCategoryCard extends StatelessWidget {
+  const _HomeCategoryCard({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.onTap,
+  });
+
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Card(
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.all(18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 56,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    gradient: LinearGradient(
+                      colors: [
+                        Theme.of(context).colorScheme.primary,
+                        Theme.of(context).colorScheme.tertiary,
                       ],
                     ),
                   ),
+                  child: Icon(icon, color: Colors.white),
                 ),
-              ),
-            );
-          },
+                const Spacer(),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(subtitle),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    const Spacer(),
+                    Icon(
+                      Icons.arrow_forward_rounded,
+                      color: Colors.white.withValues(alpha: 0.9),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
