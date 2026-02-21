@@ -17,25 +17,19 @@ Naming convention used below:
 
 ### Basic Animations
 
-| Animation | Demo Video |
+| Demo | Demo |
 |---|---|
-| Fade Animation | ![Fade](docs/videos/gif/basic-fade.gif)<br>[Watch video](docs/videos/basic-fade.mov) |
-| Scale Animation | ![Scale](docs/videos/gif/basic-scale.gif)<br>[Watch video](docs/videos/basic-scale.mov) |
-| Rotation Animation | ![Rotation](docs/videos/gif/basic-rotation.gif)<br>[Watch video](docs/videos/basic-rotation.mov) |
-| Slide Animation | ![Slide](docs/videos/gif/basic-slide.gif)<br>[Watch video](docs/videos/basic-slide.mov) |
-| Size Animation | ![Size](docs/videos/gif/basic-size.gif)<br>[Watch video](docs/videos/basic-size.mov) |
-| Color Animation | ![Color](docs/videos/gif/basic-color.gif)<br>[Watch video](docs/videos/basic-color.mov) |
-| Hero Animation | ![Hero](docs/videos/gif/basic-hero.gif)<br>[Watch video](docs/videos/basic-hero.mov) |
-| Staggered Animation | ![Staggered](docs/videos/gif/basic-staggered.gif)<br>[Watch video](docs/videos/basic-staggered.mov) |
+| **Fade Animation**<br>![Fade](docs/videos/gif/basic-fade.gif)<br>[Watch video](docs/videos/basic-fade.mov) | **Scale Animation**<br>![Scale](docs/videos/gif/basic-scale.gif)<br>[Watch video](docs/videos/basic-scale.mov) |
+| **Rotation Animation**<br>![Rotation](docs/videos/gif/basic-rotation.gif)<br>[Watch video](docs/videos/basic-rotation.mov) | **Slide Animation**<br>![Slide](docs/videos/gif/basic-slide.gif)<br>[Watch video](docs/videos/basic-slide.mov) |
+| **Size Animation**<br>![Size](docs/videos/gif/basic-size.gif)<br>[Watch video](docs/videos/basic-size.mov) | **Color Animation**<br>![Color](docs/videos/gif/basic-color.gif)<br>[Watch video](docs/videos/basic-color.mov) |
+| **Hero Animation**<br>![Hero](docs/videos/gif/basic-hero.gif)<br>[Watch video](docs/videos/basic-hero.mov) | **Staggered Animation**<br>![Staggered](docs/videos/gif/basic-staggered.gif)<br>[Watch video](docs/videos/basic-staggered.mov) |
 
 ### Advanced Animations
 
-| Category | Demo Video |
+| Demo | Demo |
 |---|---|
-| Depth Motion | ![Depth Motion](docs/videos/gif/advanced-depth-motion.gif)<br>[Watch video](docs/videos/advanced-depth-motion.mov) |
-| Signal Waves | ![Signal Waves](docs/videos/gif/advanced-signal-waves.gif)<br>[Watch video](docs/videos/advanced-signal-waves.mov) |
-| Morphing Forms | ![Morphing Forms](docs/videos/gif/advanced-morphing-forms.gif)<br>[Watch video](docs/videos/advanced-morphing-forms.mov) |
-| Particle Systems | ![Particle Systems](docs/videos/gif/advanced-particle-systems.gif)<br>[Watch video](docs/videos/advanced-particle-systems.mov) |
+| **Depth Motion**<br>![Depth Motion](docs/videos/gif/advanced-depth-motion.gif)<br>[Watch video](docs/videos/advanced-depth-motion.mov) | **Signal Waves**<br>![Signal Waves](docs/videos/gif/advanced-signal-waves.gif)<br>[Watch video](docs/videos/advanced-signal-waves.mov) |
+| **Morphing Forms**<br>![Morphing Forms](docs/videos/gif/advanced-morphing-forms.gif)<br>[Watch video](docs/videos/advanced-morphing-forms.mov) | **Particle Systems**<br>![Particle Systems](docs/videos/gif/advanced-particle-systems.gif)<br>[Watch video](docs/videos/advanced-particle-systems.mov) |
 
 ## Run Locally
 
