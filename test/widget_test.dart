@@ -11,7 +11,7 @@ void main() {
     expect(find.text('Flutter Animated Widgets'), findsOneWidget);
 
     await tester.pump(const Duration(seconds: 3));
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 300));
 
     expect(find.text('Animation Gallery'), findsOneWidget);
     expect(find.text('Fade Animation'), findsOneWidget);
