@@ -5,15 +5,59 @@ import 'advanced_animations_page.dart';
 import 'basic_animations_page.dart';
 
 class AnimationHomePage extends StatelessWidget {
-  const AnimationHomePage({super.key});
+  final void Function(ThemeMode)? onThemeChange;
+  const AnimationHomePage({super.key, this.onThemeChange});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Animation Gallery'),
-        actions: const [
-          Padding(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_6),
+            tooltip: 'Change theme',
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('Select Theme'),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ListTile(
+                          leading: const Icon(Icons.light_mode),
+                          title: const Text('Light'),
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            onThemeChange?.call(ThemeMode.light);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.dark_mode),
+                          title: const Text('Dark'),
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            onThemeChange?.call(ThemeMode.dark);
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(Icons.settings),
+                          title: const Text('System'),
+                          onTap: () {
+                            Navigator.of(context).pop();
+                            onThemeChange?.call(ThemeMode.system);
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+          const Padding(
             padding: EdgeInsets.only(right: 16),
             child: Icon(Icons.auto_awesome),
           ),
