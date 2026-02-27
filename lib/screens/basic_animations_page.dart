@@ -52,7 +52,10 @@ class BasicAnimationsPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        child: Icon(item.icon, color: Colors.white),
+                        child: Icon(
+                          item.icon,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Text(

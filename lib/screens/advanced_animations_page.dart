@@ -52,7 +52,10 @@ class AdvancedAnimationsPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        child: Icon(item.icon, color: Colors.white),
+                        child: Icon(
+                          item.icon,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Text(
@@ -79,7 +82,9 @@ class AdvancedAnimationsPage extends StatelessWidget {
                           const Spacer(),
                           Icon(
                             Icons.arrow_forward_rounded,
-                            color: Colors.white.withValues(alpha: 0.9),
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.onSurface.withOpacity(0.9),
                           ),
                         ],
                       ),

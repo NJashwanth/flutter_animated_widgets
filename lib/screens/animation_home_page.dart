@@ -138,7 +138,10 @@ class _HomeCategoryCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  child: Icon(icon, color: Colors.white),
+                  child: Icon(
+                    icon,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
                 const Spacer(),
                 Text(
@@ -155,7 +158,9 @@ class _HomeCategoryCard extends StatelessWidget {
                     const Spacer(),
                     Icon(
                       Icons.arrow_forward_rounded,
-                      color: Colors.white.withValues(alpha: 0.9),
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.onSurface.withOpacity(0.9),
                     ),
                   ],
                 ),

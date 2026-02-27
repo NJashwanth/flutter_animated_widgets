@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'animation_home_page.dart';
 import '../widgets/aurora_background.dart';
 
+class SplashScreen extends StatefulWidget {
   final void Function(ThemeMode)? onThemeChange;
   final VoidCallback? onSplashComplete;
   const SplashScreen({super.key, this.onThemeChange, this.onSplashComplete});
@@ -43,9 +43,13 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(28),
-                    color: Colors.white.withValues(alpha: 0.08),
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.surface.withValues(alpha: 0.92),
                     border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.18),
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.outline.withValues(alpha: 0.18),
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -76,7 +80,9 @@ class _SplashScreenState extends State<SplashScreen> {
                       Text(
                         'Immersive motion playground',
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Colors.white.withValues(alpha: 0.82),
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.onSurface.withValues(alpha: 0.82),
                         ),
                       ),
                       const SizedBox(height: 18),
@@ -93,7 +99,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 icon: Icon(
                   Icons.brightness_6,
                   size: 28,
-                  color: Colors.white.withOpacity(0.85),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withValues(alpha: 0.85),
                 ),
                 tooltip: 'Change theme',
                 onPressed: () {
@@ -110,7 +118,7 @@ class _SplashScreenState extends State<SplashScreen> {
                               title: const Text('Light'),
                               onTap: () {
                                 Navigator.of(context).pop();
-                                widget.onToggleTheme?.call();
+                                widget.onThemeChange?.call(ThemeMode.light);
                               },
                             ),
                             ListTile(
@@ -118,7 +126,7 @@ class _SplashScreenState extends State<SplashScreen> {
                               title: const Text('Dark'),
                               onTap: () {
                                 Navigator.of(context).pop();
-                                widget.onToggleTheme?.call();
+                                widget.onThemeChange?.call(ThemeMode.dark);
                               },
                             ),
                             ListTile(
@@ -126,7 +134,7 @@ class _SplashScreenState extends State<SplashScreen> {
                               title: const Text('System'),
                               onTap: () {
                                 Navigator.of(context).pop();
-                                widget.onToggleTheme?.call();
+                                widget.onThemeChange?.call(ThemeMode.system);
                               },
                             ),
                           ],

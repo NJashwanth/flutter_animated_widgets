@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_widgets/screens/animation_home_page.dart';
 import 'screens/splash_screen.dart';
 import 'package:lifecycle_logger/lifecycle_logger.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+class _MyAppState extends State<MyApp> {
   ThemeMode _themeMode = ThemeMode.system;
   bool _showSplash = true;
 
@@ -53,10 +55,10 @@ class MyApp extends StatefulWidget {
         ),
         cardTheme: CardThemeData(
           elevation: 0,
-          color: Colors.white.withOpacity(0.9),
+          color: Colors.white.withValues(alpha: 0.9),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Colors.black.withOpacity(0.08)),
+            side: BorderSide(color: Colors.black.withValues(alpha: 0.08)),
           ),
         ),
       ),
@@ -75,10 +77,10 @@ class MyApp extends StatefulWidget {
         ),
         cardTheme: CardThemeData(
           elevation: 0,
-          color: Colors.white.withOpacity(0.06),
+          color: Colors.white.withValues(alpha: 0.06),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Colors.white.withOpacity(0.12)),
+            side: BorderSide(color: Colors.white.withValues(alpha: 0.12)),
           ),
         ),
       ),
@@ -91,9 +93,7 @@ class MyApp extends StatefulWidget {
                 });
               },
             )
-          : AnimationHomePage(
-              onThemeChange: _setThemeMode,
-            ),
+          : AnimationHomePage(onThemeChange: _setThemeMode),
     );
   }
 }
